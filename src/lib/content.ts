@@ -2,39 +2,68 @@ import fs from 'fs';
 import path from 'path';
 import { parse } from 'smol-toml';
 
-const CONTENT_DIR = path.join(process.cwd(), 'content');
+const DEFAULT_CONTENT_DIR = 'content';
 
-export function getMarkdownContent(filename: string): string {
-    try {
-        const filePath = path.join(CONTENT_DIR, filename);
-        return fs.readFileSync(filePath, 'utf-8');
-    } catch (error) {
-        console.error(`Error loading markdown file ${filename}:`, error);
-        return '';
-    }
+function normalizeLocale(locale: string): string {
+  return locale.trim().replace('_', '-').toLowerCase();
 }
 
-export function getBibtexContent(filename: string): string {
-    try {
-        const filePath = path.join(CONTENT_DIR, filename);
-        return fs.readFileSync(filePath, 'utf-8');
-    } catch (error) {
-        console.error(`Error loading bibtex file ${filename}:`, error);
-        return '';
-    }
+function getCandidateFilePaths(filename: string, locale?: string): string[] {
+  const candidates: string[] = [];
+
+  if (locale) {
+    candidates.push(path.join(process.cwd(), `${DEFAULT_CONTENT_DIR}_${normalizeLocale(locale)}`, filename));
+  }
+
+  candidates.push(path.join(process.cwd(), DEFAULT_CONTENT_DIR, filename));
+
+  return candidates;
 }
 
-export function getTomlContent<T>(filename: string): T | null {
+function readFirstAvailableFile(filename: string, locale?: string): string {
+  const candidates = getCandidateFilePaths(filename, locale);
+
+  for (const filePath of candidates) {
     try {
-        const filePath = path.join(CONTENT_DIR, filename);
-        const fileContent = fs.readFileSync(filePath, 'utf-8');
-        return parse(fileContent) as unknown as T;
+      return fs.readFileSync(filePath, 'utf-8');
     } catch (error) {
-        console.error(`Error loading TOML file ${filename}:`, error);
-        return null;
+      if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
+        console.error(`Error loading file ${filePath}:`, error);
+      }
     }
+  }
+
+  if (locale) {
+    console.warn(`Missing localized file \"${filename}\" for locale \"${locale}\", and no fallback found in content/.`);
+  } else {
+    console.warn(`Missing file \"${filename}\" in content/.`);
+  }
+
+  return '';
 }
 
-export function getPageConfig<T = unknown>(pageName: string): T | null {
-    return getTomlContent<T>(`${pageName}.toml`);
+export function getMarkdownContent(filename: string, locale?: string): string {
+  return readFirstAvailableFile(filename, locale);
+}
+
+export function getBibtexContent(filename: string, locale?: string): string {
+  return readFirstAvailableFile(filename, locale);
+}
+
+export function getTomlContent<T>(filename: string, locale?: string): T | null {
+  const content = readFirstAvailableFile(filename, locale);
+  if (!content) {
+    return null;
+  }
+
+  try {
+    return parse(content) as unknown as T;
+  } catch (error) {
+    console.error(`Error parsing TOML file ${filename}:`, error);
+    return null;
+  }
+}
+
+export function getPageConfig<T = unknown>(pageName: string, locale?: string): T | null {
+  return getTomlContent<T>(`${pageName}.toml`, locale);
 }

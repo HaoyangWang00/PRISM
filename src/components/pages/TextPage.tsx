@@ -39,7 +39,7 @@ export default function TextPage({ config, content, embedded = false }: TextPage
                                 {...props}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-accent font-medium hover:underline transition-colors"
+                                className="text-accent font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
                             />
                         ),
                         blockquote: ({ children }) => (

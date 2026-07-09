@@ -1,32 +1,46 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { SunIcon, MoonIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import { useThemeStore, type Theme } from '@/lib/stores/themeStore';
+import { useMessages } from '@/lib/i18n/useMessages';
 import { cn } from '@/lib/utils';
 
-const themes: { value: Theme; label: string; icon: React.ReactNode }[] = [
-  {
-    value: 'system',
-    label: 'System',
-    icon: <ComputerDesktopIcon className="h-4 w-4" />,
-  },
-  {
-    value: 'light',
-    label: 'Light',
-    icon: <SunIcon className="h-4 w-4" />,
-  },
-  {
-    value: 'dark',
-    label: 'Dark',
-    icon: <MoonIcon className="h-4 w-4" />,
-  },
-];
+interface ThemeOption {
+  value: Theme;
+  label: string;
+  icon: ReactNode;
+}
+
+function useThemeOptions(): ThemeOption[] {
+  const messages = useMessages();
+
+  return [
+    {
+      value: 'system',
+      label: messages.theme.system,
+      icon: <ComputerDesktopIcon className="h-4 w-4" />,
+    },
+    {
+      value: 'light',
+      label: messages.theme.light,
+      icon: <SunIcon className="h-4 w-4" />,
+    },
+    {
+      value: 'dark',
+      label: messages.theme.dark,
+      icon: <MoonIcon className="h-4 w-4" />,
+    },
+  ];
+}
 
 export function ThemeToggle() {
   const { theme, setTheme } = useThemeStore();
   const [mounted, setMounted] = useState(false);
+  const messages = useMessages();
+  const themes = useThemeOptions();
 
   useEffect(() => {
     setMounted(true);
@@ -40,7 +54,7 @@ export function ThemeToggle() {
     );
   }
 
-  const currentTheme = themes.find(t => t.value === theme) || themes[0];
+  const currentTheme = themes.find((t) => t.value === theme) || themes[0];
 
   return (
     <div className="relative">
@@ -62,7 +76,7 @@ export function ThemeToggle() {
           'transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50',
           'text-neutral-600 hover:text-primary dark:text-neutral-400 dark:hover:text-white'
         )}
-        title={`Current theme: ${currentTheme.label}. Click to cycle theme.`}
+        title={`${messages.theme.currentTheme}: ${currentTheme.label}. ${messages.theme.cycleTheme}.`}
       >
         <motion.div
           key={theme}
@@ -87,6 +101,8 @@ export function ThemeToggleDropdown() {
   const { theme, setTheme } = useThemeStore();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const messages = useMessages();
+  const themes = useThemeOptions();
 
   useEffect(() => {
     setMounted(true);
@@ -100,7 +116,7 @@ export function ThemeToggleDropdown() {
     );
   }
 
-  const currentTheme = themes.find(t => t.value === theme) || themes[0];
+  const currentTheme = themes.find((t) => t.value === theme) || themes[0];
 
   return (
     <div className="relative">
@@ -117,7 +133,7 @@ export function ThemeToggleDropdown() {
           'transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/50',
           'text-neutral-600 hover:text-primary dark:text-neutral-400 dark:hover:text-white'
         )}
-        title={`Current theme: ${currentTheme.label}`}
+        title={`${messages.theme.currentTheme}: ${currentTheme.label}`}
       >
         <motion.div
           key={theme}
@@ -173,4 +189,4 @@ export function ThemeToggleDropdown() {
       )}
     </div>
   );
-} 
+}

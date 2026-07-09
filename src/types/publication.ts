@@ -9,9 +9,17 @@ export interface Author {
   isCoAuthor?: boolean;
 }
 
+export type BibTeXInlineNode =
+  | { type: 'text'; text: string }
+  | {
+    type: 'em' | 'strong' | 'smallCaps' | 'sup' | 'sub';
+    children: BibTeXInlineNode[];
+  };
+
 export interface Publication {
   id: string;
   title: string;
+  titleNodes?: BibTeXInlineNode[];
   authors: Author[];
   abstract?: string;
   journal?: string;
@@ -77,4 +85,3 @@ export type ResearchArea =
   | 'transformer-architectures'
   | 'biomedical-engineering'
   | 'other';
-
