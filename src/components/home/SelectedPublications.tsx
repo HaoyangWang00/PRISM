@@ -20,7 +20,7 @@ export default function SelectedPublications({ publications, title = 'Selected P
             <div className="flex items-center justify-between mb-4">
                 <h2 className="text-2xl font-serif font-bold text-primary">{title}</h2>
                 <Link
-                    href={enableOnePageMode ? "/#publications" : "/publications"}
+                    href={enableOnePageMode ? "/publications" : "/publications"}
                     prefetch={true}
                     className="text-accent hover:text-accent-dark text-sm font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
                 >
@@ -34,9 +34,9 @@ export default function SelectedPublications({ publications, title = 'Selected P
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
+                        className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02] relative"
                     >
-                        <h3 className="font-semibold text-primary mb-2 leading-tight">
+                        <h3 className="text-lg font-semibold text-primary mb-2 leading-tight">
                             {pub.title}
                         </h3>
                         <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-1">
@@ -48,11 +48,14 @@ export default function SelectedPublications({ publications, title = 'Selected P
                                     {author.isCorresponding && (
                                         <sup className={`ml-0 ${author.isHighlighted ? 'text-accent' : 'text-neutral-600 dark:text-neutral-500'}`}>†</sup>
                                     )}
+                                    {author.isCoAuthor && (
+                                        <sup className={`ml-0 ${author.isHighlighted ? 'text-accent' : 'text-neutral-400 dark:text-neutral-500'}`}>*</sup>
+                                    )}
                                     {idx < pub.authors.length - 1 && ', '}
                                 </span>
                             ))}
                         </p>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-2">
+                        <p className="text-base font-bold text-primary mb-3">
                             {pub.journal || pub.conference}
                         </p>
                         {pub.description && (
@@ -60,6 +63,32 @@ export default function SelectedPublications({ publications, title = 'Selected P
                                 {pub.description}
                             </p>
                         )}
+
+                        <div className="flex flex-wrap gap-2 mt-auto items-center">
+                            <span className="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded-md shadow-sm">
+                                {pub.year}
+                            </span>
+                            {pub.doi && (
+                                <a
+                                    href={pub.doi}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                >
+                                Paper
+                                </a>
+                            )}
+                            {pub.url && (
+                                <a
+                                    href={pub.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                >
+                                    Website
+                                </a>
+                            )}
+                        </div>
                     </motion.div>
                 ))}
             </div>

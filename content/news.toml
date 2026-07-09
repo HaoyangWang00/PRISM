@@ -1,7 +1,233 @@
+# 部署方法：https://github.com/xyjoey/PRISM/blob/main/docs/deployment.md
+
+[[news]]
+date = "2026-06"
+content = "I received my **Ph.D. degree** from Tsinghua University and was honored as an **Outstanding Graduate** of Beijing and Tsinghua University." 
+
+[[news]]
+date = "2026-02"
+content = "**x^2-Fusion** was accepted by **IEEE/CVF CVPR 2026**. This work introduces an edge space to bridge Event, Lidar, and Camera modalities for joint scene and optical flow estimation." 
+
+[[news]]
+date = "2026-01"
+content = "Extended version of **mmE-Loc** was accepted by **IEEE TMC**!"
+
+[[news]]
+date = "2025-12"
+content = "Our comprehensive survey, **Event Camera Meets Mobile Embodied Perception**, was accepted by **ACM Computing Surveys (CSUR)**! We propose the **4A** taxonomy to bridge neuromorphic vision and mobile agents."
+
 [[news]]
 date = "2025-11"
-content = "Our work has been accepted by a prestigious journal 🎉"
+content = "**SniffySquad** was accepted by **ACM TOSN**. This work addresses gas source localization via multi-robot collaboration."
 
 [[news]]
 date = "2025-09"
-content = "Starting my PhD at the University of Example"
+content = "**EventPro** was accepted by **ACM SenSys 2026**. Propeller now can served as the entry sensing point for drone!"
+
+[[news]]
+date = "2025-09"
+content = "Extended version of **TransformLoc - Aerial Shepherds** was accepted by **IEEE TMC**!"
+
+[[news]]
+date = "2025-06"
+content = "Finish the wonderful visiting at the UC Berkeley!"
+
+[[news]]
+date = "2025-05"
+content = "**DDL** won **Sliver Prize** at 50th International Exhibition of Inventions Geneva!"
+
+[[news]]
+date = "2025-04"
+content = "**CatUA** was accepted by **IEEE TMC**! Congrats to Nan Zhou!"
+
+# [[news]]
+# date = "2025-04"
+# content = "Curious about event camera-based mobile sensing? Our New Survey gives a comprehensive overview!"
+
+[[news]]
+date = "2025-01"
+content = "**mmE-Loc** was conditionally accepted by **ACM SenSys 2025**!"
+
+[[news]]
+date = "2025-01"
+content = "I start working as a Visiting Scholar at the UC Berkeley!"
+
+[[news]]
+date = "2024-11"
+content = "I was honored to receive the National Scholarship (Graduate Student) from Ministry of Education!"
+
+[[news]]
+date = "2024-10"
+content = "**AirTouch** received all four badges from ACM Artifact Evaluation!"
+
+[[news]]
+date = "2024-06"
+content = "**DDL** was accepted by **IEEE JSTSP**! Congrats to Xuecheng!"
+
+[[news]]
+date = "2024-06"
+content = "**AirTouch** was conditionally accepted by **ACM MobiCom 2024**! Congrats to Chenyu!"
+
+[[news]]
+date = "2024-04"
+content = "**SOScheduler** was accepted by IEEE IOT-J! Congrats to Xuecheng!"
+
+[[news]]
+date = "2024-03"
+content = "**MobiAir** was accepted by **ACM MobiSys 2024**! (Acceptance ratio: 16.3%)! Congrats to Yuxuan!"
+
+[[news]]
+date = "2024-02"
+content = "Three posters were accepted by HotMobile 2024 and IEEE INFOCOM 2024!"
+
+[[news]]
+date = "2024-02"
+content = "I will serve as a T.A. of the course Urban low altitude messenger host by Tsinghua SIGS and Meituan Inc.!"
+
+[[news]]
+date = "2023-12"
+content = "We won the 1st in 1st Low-Altitude Economy Flight Management Challenge Creative Competition hold by Meituan Inc.!"
+
+[[news]]
+date = "2023-12"
+content = "**TransformLoc** was accepted by **IEEE INFOCOM 2024**! (Acceptance rate: 19.5%)"
+
+[[news]]
+date = "2023-10"
+content = "**CaliFormer** was selected as the **Best Persentation Award** of ACM Ubicomp 2023 CPD!"
+
+[[news]]
+date = "2023-09"
+content = "I will serve as a T.A. of the Tsinghua SIGS course Introduction to AIoT!"
+
+[[news]]
+date = "2023-07"
+content = "CaliFormer and SmoothLander were accepted by ACM Ubicomp 2023 CPD!"
+
+[[news]]
+date = "2023-05"
+content = "One poster was accepted by IEEE IPSN 2023!"
+
+[[news]]
+date = "2022-10"
+content = "H-SwarmLoc was accepted by ACM Sensys 2022 CML-IoT!"
+
+[[news]]
+date = "2022-09"
+content = "**DeliverSense** was selected as the **Best Paper Award** of ACM Ubicomp 2022 CPD!"
+
+[[news]]
+date = "2022-07"
+content = "Our paper DeliverSense was accepted by ACM Ubicomp 2022 CPD!"
+
+[[news]]
+date = "2022-06"
+content = "I graduated from Central South University with honor!"
+
+# [[news]]
+# date = "2025-11"
+# content = "SniffySquad is accepted by ACM TOSN. This work addresses gas source localization via multi-robot collaboration."
+
+# [[news]]
+# date = "2025-09"
+# content = "EventPro is accepted by ACM SenSys 2026. Propeller now can served as the entry sensing point for drone!"
+
+# [[news]]
+# date = "2025-09"
+# content = "Extended version of TransformLoc - Aerial Shepherds is accepted by IEEE TMC!"
+
+# [[news]]
+# date = "2025-06"
+# content = "Finish the wonderful visiting at the UC Berkeley!"
+
+# [[news]]
+# date = "2025-05"
+# content = "DDL has won Sliver Prize at 50th International Exhibition of Inventions Geneva!"
+
+# [[news]]
+# date = "2025-04"
+# content = "CatUA is accepted by IEEE TMC! Congrats to Nan Zhou!"
+
+# [[news]]
+# date = "2025-04"
+# content = "Curious about event camera-based mobile sensing? Our New Survey gives a comprehensive overview—don't miss it!"
+
+# [[news]]
+# date = "2025-01"
+# content = "mmE-Loc is conditionally accepted by ACM SenSys 2025!"
+
+# [[news]]
+# date = "2025-01"
+# content = "I start working as a Visiting Scholar at the UC Berkeley!"
+
+# [[news]]
+# date = "2024-11"
+# content = "I am honored to receive the National Scholarship (Graduate Student) from Ministry of Education!"
+
+# [[news]]
+# date = "2024-10"
+# content = "AirTouch received all four badges from ACM Artifact Evaluation!"
+
+# [[news]]
+# date = "2024-06"
+# content = "DDL is accepted by IEEE JSTSP! Congrats to Xuecheng!"
+
+# [[news]]
+# date = "2024-06"
+# content = "AirTouch is conditionally accepted by ACM MobiCom 2024! Congrats to Chenyu!"
+
+# [[news]]
+# date = "2024-04"
+# content = "SOScheduler is accepted by IEEE IOT-J! Congrats to Xuecheng!"
+
+# [[news]]
+# date = "2024-03"
+# content = "MobiAir is accepted by ACM MobiSys 2024! (Acceptance ratio: 16.3%)! Congrats to Yuxuan!"
+
+# [[news]]
+# date = "2024-02"
+# content = "Three posters are accepted by HotMobile 2024 and IEEE INFOCOM 2024!"
+
+# [[news]]
+# date = "2024-02"
+# content = "I serve as a T.A. of the course Urban low altitude messenger host by Tsinghua SIGS and Meituan Inc.!"
+
+# [[news]]
+# date = "2023-12"
+# content = "We win the 1st in 1st Low-Altitude Economy Flight Management Challenge Creative Competition hold by Meituan Inc.!"
+
+# [[news]]
+# date = "2023-12"
+# content = "TransformLoc is accepted by IEEE INFOCOM 2024! (Acceptance rate: 19.5%)"
+
+# [[news]]
+# date = "2023-10"
+# content = "CaliFormer is selected as the Best Persentation Award of ACM Ubicomp 2023 CPD!"
+
+# [[news]]
+# date = "2023-09"
+# content = "I serve as a T.A. of the Tsinghua SIGS course Introduction to AIoT!"
+
+# [[news]]
+# date = "2023-07"
+# content = "CaliFormer and SmoothLander are accepted by ACM Ubicomp 2023 CPD!"
+
+# [[news]]
+# date = "2023-05"
+# content = "One poster is accepted by IEEE IPSN 2023!"
+
+# [[news]]
+# date = "2022-10"
+# content = "H-SwarmLoc is accepted by ACM Sensys 2022 CML-IoT!"
+
+# [[news]]
+# date = "2022-09"
+# content = "DeliverSense is selected as the Best Paper Award of ACM Ubicomp 2022 CPD!"
+
+# [[news]]
+# date = "2022-07"
+# content = "Our paper DeliverSense is accepted by ACM Ubicomp 2022 CPD!"
+
+# [[news]]
+# date = "2022-06"
+# content = "I graduated from Central South University with honor!"

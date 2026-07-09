@@ -1,27 +1,53 @@
 type = "card"
-title = "Awards"
+title = "Selected awards"
 description = "Honors and awards I have received."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Outstanding Graduate Student"
+subtitle = "Beijing and Tsinghua University"
+date = "2026"
+
+[[items]]
+title = "Leaders of Tomorrow Scholarship (Excellence Scholarship)"
+subtitle = "Tsinghua SIGS"
 date = "2025"
-content = "Description of the award."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Silver Prize. The 50th International Exhibition of Inventions Geneva"
+subtitle = "World Intellectual Property Organization (WIPO)"
+date = "2025"
+
+[[items]]
+title = "National Scholarship (Graduate Student)"
+subtitle = "Ministry of Education, China"
 date = "2024"
-content = "Description of the award."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "The 1st. in Low-Altitude Economy Flight Management Challenge"
+subtitle = "Meituan Inc. and Tsinghua SIGS"
 date = "2023"
-content = "Description of the award."
 
 [[items]]
-title = "Example Award"
-subtitle = "Organization"
+title = "Best Presentation Award. ACM Ubicomp CPD workshop"
+subtitle = "ACM Ubicomp"
+date = "2023"
+
+[[items]]
+title = "Outstanding Undergraduate Student"
+subtitle = "Hunan Province and Central South University"
 date = "2022"
-content = "Description of the award."
+
+[[items]]
+title = "National Scholarship (Undergraduate Student)"
+subtitle = "Ministry of Education, China"
+date = "2019"
+
+[[items]]
+title = "First Prize. The China Robot Competition Advanced Vision Competition"
+subtitle = "Chinese Association of Automation"
+date = "2019"
+
+[[items]]
+title = "First Prize. National College Students Intelligent Design Competition"
+subtitle = "Chinese Association for Artificial Intelligence"
+date = "2019"

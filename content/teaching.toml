@@ -1,10 +1,35 @@
 type = "card"
-title = "Teaching"
-description = "Courses I have taught or assisted with."
+title = "Teaching and Team"
+# description = "Courses I have taught or assisted with."
 
 [[items]]
-title = "Example Course"
-subtitle = "Teaching Assistant"
-date = "2024"
-content = "Description of the course and responsibilities."
-tags = ["Undergraduate", "CS"]
+title = "Teaching Assistant"
+    [[items.list]]
+    name = "Introduction to AIoT, Tsinghua University"
+    # date = "    2024   "
+
+    # 👇 第 2 个列表项 (想要加更多，就继续复制这一块)
+    [[items.list]]
+    name = "Urban low altitude messenger, Tsinghua University"
+    # date = "2023, 2024"
+
+[[items]]
+title = "Team"
+subtitle = "Under the supervision of Prof. Xinlei Chen and Dr. Jingao Xu, I lead the sensing group in our lab. Our team focuses on drone, integrating event cameras to design hardware and software systems that push the limits of computing and sensing. I sincerely thank all team members for their trust and support:"
+    [[items.list]]
+    date = "Current"
+    name = """
+    Zhiting Zhou (PhD, 2025), 
+    Ciyu Ruan (Master, 2023), Xinyu Luo (Master, 2023), Yan Zhuo (Master, 2023), 
+    Ruishan Guo (Master, 2024), Wenhua Ding (Master, 2024), Zhengli Zhang (Master, 2024), 
+    Pengtao Ma (Master, 2025), Ziliang Zhou (Master, 2025)
+    """
+
+    [[items.list]]
+    date = "Alumni"
+    name = """
+    Chenyu Zhao (2022): Master thesis on ground effect-based drones sensing. Next stop: PhD Student @ Imperial College London
+    Yuhan Cheng (2022): Master thesis on multi-robot collaboration. Next stop: PhD Student @ Duke University
+    Yuxuan Liu (2021): Master thesis on mobile crowdsensing for air-quality monitoring. Next stop: PhD Student @ Tsinghua University
+    """
+    # date = "2023, 2024"

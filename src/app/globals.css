@@ -14,9 +14,10 @@
   --primary: #1e293b;
   --primary-light: #334155;
   --primary-dark: #0f172a;
-  --accent: #d4a562;
-  --accent-light: #e4b976;
-  --accent-dark: #b8914d;
+  /* Tsinghua Purple */
+  --accent: #6B0F7A;
+  --accent-light: #a64dff;
+  --accent-dark: #4a0a55;
   
   /* Neutral colors */
   --neutral-50: #f8fafc;
@@ -137,9 +138,9 @@
   --primary: #f8fafc;
   --primary-light: #e2e8f0;
   --primary-dark: #cbd5e1;
-  --accent: #e4b976;
-  --accent-light: #f0c674;
-  --accent-dark: #d4a562;
+  --accent: #c084fc;
+  --accent-light: #d8b4fe;
+  --accent-dark: #a855f7;
   
   /* Dark mode glass effect */
   --glass-bg: rgba(15, 23, 42, 0.8);

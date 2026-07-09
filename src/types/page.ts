@@ -14,6 +14,11 @@ export interface TextPageConfig extends BasePageConfig {
     source: string;
 }
 
+export interface CardListItem {
+    name: string;  // 期刊/会议名称，例如 "IEEE T-RO"
+    date?: string; // 具体时间，例如 "2023 - Present"
+}
+
 export interface CardItem {
     title: string;
     subtitle?: string;
@@ -22,6 +27,7 @@ export interface CardItem {
     tags?: string[];
     link?: string;
     image?: string;
+    list?: CardListItem[];
 }
 
 export interface CardPageConfig extends BasePageConfig {

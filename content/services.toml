@@ -2,8 +2,48 @@ type = "card"
 title = "Services"
 description = "Professional services and community involvement."
 
+
 [[items]]
-title = "Reviewer"
-subtitle = "Journal Name"
-date = "2024"
-content = "Reviewed papers for..."
+title = "Technical Program Committee"
+    [[items.list]]
+    name = "The Annual AAAI Conference on Artificial Intelligence (AAAI)"
+    date = "2025, 2026"
+
+    [[items.list]]
+    name = "ACM SenSys AE"
+    date = "2024"
+
+    [[items.list]]
+    name = "ACM IASA Workshop"
+    date = "2024"
+
+[[items]]
+title = "Selected Journal Reviewer"
+    [[items.list]]
+    name = "IEEE Transactions on Mobile Computing (IEEE TMC)"
+    date = "2026-Present"
+
+    [[items.list]]
+    name = "ACM IMWUT/UbiComp"
+    date = "2025-Present"
+
+    [[items.list]]
+    name = "IEEE Robotics and Automation Letters (IEEE RA-L)"
+    date = "2025-Present"
+
+[[items]]
+title = "Conference Reviewer"
+    [[items.list]]
+    name = "IEEE International Conference on Robotics and Automation (IEEE ICRA)"
+    date = "2025"
+
+
+[[items]]
+title = "Teaching Assistant"
+    [[items.list]]
+    name = "Introduction to AIoT, Tsinghua University (Graduate Course)"
+    date = "Fall 2024"
+
+    [[items.list]]
+    name = "Urban low altitude messenger, Tsinghua University (Graduate Course)"
+    date = "Spring 2023, Spring 2024"

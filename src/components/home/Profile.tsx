@@ -1,16 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import {
     EnvelopeIcon,
     AcademicCapIcon,
-    HeartIcon,
     MapPinIcon
 } from '@heroicons/react/24/outline';
 import { MapPinIcon as MapPinSolidIcon, EnvelopeIcon as EnvelopeSolidIcon } from '@heroicons/react/24/solid';
-import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
 import { Github, Linkedin, Pin } from 'lucide-react';
 import { SiteConfig } from '@/lib/config';
 
@@ -29,43 +27,16 @@ const OrcidIcon = ({ className }: { className?: string }) => (
 interface ProfileProps {
     author: SiteConfig['author'];
     social: SiteConfig['social'];
-    features: SiteConfig['features'];
     researchInterests?: string[];
 }
 
-export default function Profile({ author, social, features, researchInterests }: ProfileProps) {
+export default function Profile({ author, social, researchInterests }: ProfileProps) {
 
-    const [hasLiked, setHasLiked] = useState(false);
-    const [showThanks, setShowThanks] = useState(false);
     const [showAddress, setShowAddress] = useState(false);
     const [isAddressPinned, setIsAddressPinned] = useState(false);
     const [showEmail, setShowEmail] = useState(false);
     const [isEmailPinned, setIsEmailPinned] = useState(false);
     const [lastClickedTooltip, setLastClickedTooltip] = useState<'email' | 'address' | null>(null);
-
-    // Check local storage for user's like status
-    useEffect(() => {
-        if (!features.enable_likes) return;
-
-        const userHasLiked = localStorage.getItem('jiale-website-user-liked');
-        if (userHasLiked === 'true') {
-            setHasLiked(true);
-        }
-    }, [features.enable_likes]);
-
-    const handleLike = () => {
-        const newLikedState = !hasLiked;
-        setHasLiked(newLikedState);
-
-        if (newLikedState) {
-            localStorage.setItem('jiale-website-user-liked', 'true');
-            setShowThanks(true);
-            setTimeout(() => setShowThanks(false), 2000);
-        } else {
-            localStorage.removeItem('jiale-website-user-liked');
-            setShowThanks(false);
-        }
-    };
 
     const socialLinks = [
         ...(social.email ? [{
@@ -104,10 +75,10 @@ export default function Profile({ author, social, features, researchInterests }:
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 70 }}
+            animate={{ opacity: 1, y: 50 }}
             transition={{ duration: 0.6 }}
-            className="sticky top-8"
+            className="sticky top-20 lg:top-24"
         >
             {/* Profile Image */}
             <div className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
@@ -122,7 +93,7 @@ export default function Profile({ author, social, features, researchInterests }:
             </div>
 
             {/* Name and Title */}
-            <div className="text-center mb-6">
+            <div className="text-center mb-4">
                 <h1 className="text-3xl font-serif font-bold text-primary mb-2">
                     {author.name}
                 </h1>
@@ -313,44 +284,49 @@ export default function Profile({ author, social, features, researchInterests }:
                 </div>
             )}
 
-            {/* Like Button */}
-            {features.enable_likes && (
-                <div className="flex justify-center">
-                    <div className="relative">
-                        <motion.button
-                            onClick={handleLike}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 ${hasLiked
-                                ? 'bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400'
-                                : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-500 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-600 dark:hover:text-red-400 cursor-pointer'
-                                }`}
-                        >
-                            {hasLiked ? (
-                                <HeartSolidIcon className="h-4 w-4" />
-                            ) : (
-                                <HeartIcon className="h-4 w-4" />
-                            )}
-                            <span>{hasLiked ? 'Liked' : 'Like'}</span>
-                        </motion.button>
 
-                        {/* Thanks bubble */}
-                        <AnimatePresence>
-                            {showThanks && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 10, scale: 0.8 }}
-                                    animate={{ opacity: 1, y: -10, scale: 1 }}
-                                    exit={{ opacity: 0, y: -20, scale: 0.8 }}
-                                    className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full bg-accent text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg whitespace-nowrap"
-                                >
-                                    Thanks! 😊
-                                    <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-accent"></div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
+            <footer className="mt-auto hidden lg:flex flex-col items-center justify-center w-full">
+            {/* University Logos */}
+            {/* <div className="flex justify-center items-center gap-4 mb-6">
+                <div className="relative w-21 h-21 transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100">
+                    <Image
+                        src="/CSUlogo.png"  // ⚠️ 记得修改图片路径
+                        alt="CSU"
+                        fill
+                        className="object-contain"
+                    />
                 </div>
-            )}
+
+                <div className="relative w-21 h-21 transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100">
+                    <Image
+                        src="/THUlogo.png"  // ⚠️ 记得修改图片路径
+                        alt="THU"
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+
+                <div className="relative w-21 h-21 transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100">
+                    <Image
+                        src="/UCBlogo.svg"  // ⚠️ 记得修改图片路径
+                        alt="UCB"
+                        fill
+                        className="object-contain"
+                    />
+                </div>
+            </div> */}
+        
+            {/* Visitors Map & Counter */}
+            {/* <div className="flex flex-col items-center justify-center gap-6 mb-6">
+                
+                <a href='https://clustrmaps.com/site/1bysg'  title='Visit tracker'>
+                <img src='//clustrmaps.com/map_v2.png?cl=080808&w=300&t=tt&d=wkiXzqfozZPOF_t6DNGFM151W5PiVzIrHseUIG_GFj4&co=ffffff&ct=808080'/>
+                </a>
+            
+            </div> */}
+            </footer>
+
+
         </motion.div>
     );
 }

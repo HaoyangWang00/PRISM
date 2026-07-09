@@ -1,33 +1,34 @@
 [site]
-title = "Jiale Liu"
-description = "PhD student at the University of Example."
-favicon = "/favicon.svg"
-last_updated = "November 18, 2025"
+title = "Haoyang Wang"
+description = "Postdoctoral Researcher at Tsinghua University."
+favicon = "/THUlogo.png"
+last_updated = "July 7, 2026"
 
 [author]
-name = "Jiale Liu"
-title = "PhD Student"
-institution = "University of Example"
-avatar = "/bio.jpg"
+name = "Haoyang Wang"
+chinese_name = "王灏洋"
+title = "Postdoctoral Researcher"
+institution = "Tsinghua University"
+avatar = "/haoyang250613.jpg"
 
 [social]
 # Contact information (leave blank or delete to hide)
 
-email = "john.doe@example.com"
-location = "City, Country"
-location_url = "https://maps.google.com"
-location_details = [
-  "Room 123, Science Building,",
-  "University Avenue, City, Country"
-]
-google_scholar = "https://scholar.google.com"
-orcid = "https://orcid.org"
-github = "https://github.com"
-linkedin = "https://linkedin.com"
+email = "haoyang-22@mails.tsinghua.edu.cn"
+# location = "Shenzhen, China"
+# location_url = "https://maps.google.com"
+# location_details = [
+#   "Room 123, Science Building,",
+#   "University Avenue, City, Country"
+# ]
+google_scholar = "https://scholar.google.com.hk/citations?user=V2lH0rMAAAAJ&hl=zh-CN"
+# orcid = "https://orcid.org"
+github = "https://github.com/HaoyangWang00"
+linkedin = "https://www.linkedin.com/in/haoyang-wang-44a21429a/"
 
 [features]
 # Show a like button on the about page
-enable_likes = true
+enable_likes = false
 
 # Display all subpages on a single page
 enable_one_page_mode = false
@@ -44,17 +45,11 @@ type = "page"
 target = "publications"
 href = "/publications"
 
-[[navigation]]
-title = "Teaching"
-type = "page"
-target = "teaching"
-href = "/teaching"
-
-[[navigation]]
-title = "Awards"
-type = "page"
-target = "awards"
-href = "/awards"
+# [[navigation]]
+# title = "Teaching & Team"
+# type = "page"
+# target = "teaching"
+# href = "/teaching"
 
 [[navigation]]
 title = "Services"
@@ -63,7 +58,15 @@ target = "services"
 href = "/services"
 
 [[navigation]]
-title = "CV"
+title = "Awards"
 type = "page"
-target = "cv"
-href = "/cv"
+target = "awards"
+href = "/awards"
+
+
+
+# [[navigation]]
+# title = "CV"
+# type = "page"
+# target = "cv"
+# href = "/cv"

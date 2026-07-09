@@ -14,42 +14,40 @@ PRISM 专为**研究人员、开发者和学者**量身打造，只为让你能�
 
 ## ✨ 核心特性
 
-*   **📄 配置驱动**：无需繁杂的代码！你只需在 `content/` 目录下编辑简单的 `TOML`、`Markdown` 和 `BibTeX` 文件即可管理全站内容。更新网站就像写文档一样简单。
-*   **📚 原生 BibTeX 支持**：直接读取你的 `.bib` 文件渲染论文列表。支持按年份、类型筛选，支持搜索，甚至还能自动生成引用格式。
-*   **🎨 现代美学设计**：干净清爽的响应式 UI，精心调配的衬线/无衬线字体排印，丝般顺滑的 Framer Motion 动画，以及完美支持深色模式。
-*   **⚡️ 极致性能体验**：基于 Next.js 20 和 Turbopack 构建。静态导出确保了闪电般的加载速度，也让部署变得前所未有的简单。
-*   **🔍 SEO 友好**：为每个页面自动动态生成元数据，让你的主页更容易被检索。
-*   **🧩 灵活的动态路由**：只需新建一个配置文件，系统会自动为你处理好路由。
+* **📄 配置驱动**：无需繁杂的代码！你只需在 `content/` 目录下编辑简单的 `TOML`、`Markdown` 和 `BibTeX` 文件即可管理全站内容。更新网站就像写文档一样简单。
+* **📚 原生 BibTeX 支持**：直接读取你的 `.bib` 文件渲染论文列表。支持按年份、类型筛选，支持搜索，甚至还能自动生成引用格式。
+* **🎨 现代美学设计**：干净清爽的响应式 UI，精心调配的衬线/无衬线字体排印，丝般顺滑的 Framer Motion 动画，以及完美支持深色模式。
+* **⚡️ 极致性能体验**：基于 Next.js 20 和 Turbopack 构建。静态导出确保了闪电般的加载速度，也让部署变得前所未有的简单。
+* **🔍 SEO 友好**：为每个页面自动动态生成元数据，让你的主页更容易被检索。
+* **🧩 灵活的动态路由**：只需新建一个配置文件，系统会自动为你处理好路由。
 
 ## 🚀 快速开始
 
 ### 前置要求
 
-*   Node.js 15 或更高版本
-*   npm, pnpm, 或 yarn
+* Node.js 15 或更高版本
+* npm, pnpm, 或 yarn
 
 ### 安装步骤
 
-1.  **克隆仓库：**
+1. **克隆仓库：**
 
-    ```bash
-    git clone https://github.com/xyjoey/PRISM.git
-    cd PRISM
-    ```
+   ```bash
+   git clone https://github.com/xyjoey/PRISM.git
+   cd PRISM
+   ```
+2. **安装依赖：**
 
-2.  **安装依赖：**
+   ```bash
+   npm install
+   ```
+3. **启动开发服务器：**
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm run dev
+   ```
 
-3.  **启动开发服务器：**
-
-    ```bash
-    npm run dev
-    ```
-
-    在浏览器中打开 [http://localhost:3000](http://localhost:3000)，即可实时预览你的网站。
+   在浏览器中打开 [http://localhost:3000](http://localhost:3000)，即可实时预览你的网站。
 
 ## 🛠️ 配置指南
 
@@ -81,19 +79,21 @@ enable_likes = true # 是否开启点赞功能
 ### 3. 论文列表 (`content/publications.bib`)
 
 直接从 Google Scholar、Zotero 或 Mendeley 导出你的论文列表到 `content/publications.bib`。PRISM 会自动解析并生成精美的论文页面。
-*   **小贴士**：你可以在 bib 文件中通过添加 `selected`, `preview` 和 `description` 字段来自定义论文的展示效果（例如是否在首页置顶、添加封面图等）。
+
+* **小贴士**：你可以在 bib 文件中通过添加 `selected`, `preview` 和 `description` 字段来自定义论文的展示效果（例如是否在首页置顶、添加封面图等）。
 
 ### 4. 添加新页面
 
 想增加一个“项目展示”页？很简单：
+
 1. 在 `content/` 下新建一个 TOML 文件（例如 `content/projects.toml`）。
 2. 在 `content/config.toml` 的 `navigation` 列表中把这个新页面加进去。
 
 PRISM 支持以下几种页面类型：
 
-*   `text`: 纯文本渲染（Markdown），非常适合用来放 **个人简历 (CV)** 或 **详细介绍 (Bio)**。
-*   `card`: 卡片列表布局，适合展示 **项目 (Projects)** 或 **获奖经历 (Awards)**。
-*   `publication`: 完整的论文列表页，自带搜索和筛选器。
+* `text`: 纯文本渲染（Markdown），非常适合用来放 **个人简历 (CV)** 或 **详细介绍 (Bio)**。
+* `card`: 卡片列表布局，适合展示 **项目 (Projects)** 或 **获奖经历 (Awards)**。
+* `publication`: 完整的论文列表页，自带搜索和筛选器。
 
 ## 📦 部署上线
 

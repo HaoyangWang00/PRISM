@@ -1,5 +1,3 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+I am currently a Postdoctoral Researcher in the [Department of Automation](https://www.au.tsinghua.edu.cn/) at [Tsinghua University](https://www.tsinghua.edu.cn/en/), working with [Prof. Yunhao Liu](https://scholar.google.com/citations?user=hon00PIAAAAJ&hl=en) and [Prof. Xinlei Chen](https://chen-xinlei.com/).
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
-
-My current research focuses on investigating the mathematical principles of natural philosophy.
+Prior to this, I received my Ph.D. degree with honor in Computer Science and Engineering from [Tsinghua University](https://www.au.tsinghua.edu.cn/) in 2026, advised by [Prof. Xinlei Chen](https://chen-xinlei.com/) and [Prof. Jingao Xu](https://jingao-xu.info/). I was also a jointly cultivated Ph.D. at [UC Berkeley](https://www.berkeley.edu/), advised by [Prof. Liwei Lin](https://scholar.google.com/citations?user=FTe6HDoAAAAJ&hl=en). I received my B.Eng. degree with honor in Computer Science and Engineering from [Central South University](https://en.csu.edu.cn/) in 2022, advised by [Prof. Ju Ren](https://juren1987.github.io/).

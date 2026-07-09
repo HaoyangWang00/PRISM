@@ -104,7 +104,7 @@ export default function RootLayout({
             siteTitle={config.site.title}
             enableOnePageMode={config.features.enable_one_page_mode}
           />
-          <main className="min-h-screen pt-16 lg:pt-20">
+          <main className="min-h-screen flex-grow pt-16 lg:pt-20">
             {children}
           </main>
           <Footer lastUpdated={config.site.last_updated} />
