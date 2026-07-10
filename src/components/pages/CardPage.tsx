@@ -26,15 +26,15 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 hover:scale-[1.01] relative`}
+                        className={`bg-white dark:bg-neutral-900 ${embedded ? "p-4" : "p-6"} rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-lg transition-all duration-200 relative`}
                     >
-                        <div className="flex justify-between items-start mb-1">
-                            <h3 className={`${embedded ? "text-lg" : "text-xl"} text-accent font-medium mb-1 font-semibold`}>{item.title}</h3>
-                            {item.date && (
-                                <span className="bg-accent text-white text-sm font-bold px-2 py-0.5 rounded-md shadow-sm flex-shrink-0 ml-2">
-                                    {item.date}
-                                </span>
-                            )}
+                        {item.date && (
+                            <span className="absolute top-3 right-3 bg-accent text-white text-xs sm:text-sm font-bold px-2 py-0.5 rounded-md shadow-sm">
+                                {item.date}
+                            </span>
+                        )}
+                        <div className="mb-1">
+                            <h3 className={`${embedded ? "text-lg" : "text-xl"} text-accent font-medium mb-1 font-semibold pr-16`}>{item.title}</h3>
                         </div>
                         {item.subtitle && (
                             <p className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-500 leading-relaxed`}>{item.subtitle}</p>

@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Publication } from '@/types/publication';
@@ -11,6 +12,19 @@ interface SelectedPublicationsProps {
 }
 
 export default function SelectedPublications({ publications, title = 'Selected Publications', enableOnePageMode = false }: SelectedPublicationsProps) {
+
+    // Group publications by year
+    const groupedByYear = useMemo(() => {
+        const groups: Record<number, Publication[]> = {};
+        publications.forEach(pub => {
+            if (!groups[pub.year]) groups[pub.year] = [];
+            groups[pub.year].push(pub);
+        });
+        return Object.entries(groups)
+            .sort(([a], [b]) => Number(b) - Number(a))
+            .map(([year, pubs]) => ({ year: Number(year), pubs }));
+    }, [publications]);
+
     return (
         <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -27,69 +41,79 @@ export default function SelectedPublications({ publications, title = 'Selected P
                     View All →
                 </Link>
             </div>
-            <div className="space-y-4">
-                {publications.map((pub, index) => (
-                    <motion.div
-                        key={pub.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: 0.1 * index }}
-                        className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02] relative"
-                    >
-                        <h3 className="text-lg font-semibold text-primary mb-2 leading-tight">
-                            {pub.title}
-                        </h3>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-1">
-                            {pub.authors.map((author, idx) => (
-                                <span key={idx}>
-                                    <span className={author.isHighlighted ? 'font-semibold text-accent' : ''}>
-                                        {author.name}
-                                    </span>
-                                    {author.isCorresponding && (
-                                        <sup className={`ml-0 ${author.isHighlighted ? 'text-accent' : 'text-neutral-600 dark:text-neutral-500'}`}>†</sup>
-                                    )}
-                                    {author.isCoAuthor && (
-                                        <sup className={`ml-0 ${author.isHighlighted ? 'text-accent' : 'text-neutral-400 dark:text-neutral-500'}`}>*</sup>
-                                    )}
-                                    {idx < pub.authors.length - 1 && ', '}
-                                </span>
-                            ))}
-                        </p>
-                        <p className="text-base font-bold text-primary mb-3">
-                            {pub.journal || pub.conference}
-                        </p>
-                        {pub.description && (
-                            <p className="text-sm text-neutral-500 dark:text-neutral-500 line-clamp-2">
-                                {pub.description}
-                            </p>
-                        )}
-
-                        <div className="flex flex-wrap gap-2 mt-auto items-center">
-                            <span className="bg-accent text-white text-xs font-bold px-2 py-0.5 rounded-md shadow-sm">
-                                {pub.year}
+            <div className="space-y-6">
+                {groupedByYear.map((group) => (
+                    <div key={group.year}>
+                        {/* Year header: year on top-left, line below */}
+                        <div className="mb-3">
+                            <span className="text-2xl font-serif font-bold text-primary">
+                                {group.year}
                             </span>
-                            {pub.doi && (
-                                <a
-                                    href={pub.doi}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
-                                >
-                                Paper
-                                </a>
-                            )}
-                            {pub.url && (
-                                <a
-                                    href={pub.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
-                                >
-                                    Website
-                                </a>
-                            )}
+                            <div className="border-t-2 border-accent/30 mt-1" />
                         </div>
-                    </motion.div>
+                        <div className="space-y-3">
+                            {group.pubs.map((pub, index) => (
+                                <motion.div
+                                    key={pub.id}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.05 * index }}
+                                    className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200"
+                                >
+                                    <h3 className="text-lg font-semibold text-primary mb-2 leading-tight">
+                                        {pub.title}
+                                    </h3>
+                                    <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-1">
+                                        {pub.authors.map((author, idx) => (
+                                            <span key={idx}>
+                                                <span className={author.isHighlighted ? 'font-semibold text-accent' : ''}>
+                                                    {author.name}
+                                                </span>
+                                                {author.isCorresponding && (
+                                                    <sup className={`ml-0 ${author.isHighlighted ? 'text-accent' : 'text-neutral-600 dark:text-neutral-500'}`}>†</sup>
+                                                )}
+                                                {author.isCoAuthor && (
+                                                    <sup className={`ml-0 ${author.isHighlighted ? 'text-accent' : 'text-neutral-400 dark:text-neutral-500'}`}>*</sup>
+                                                )}
+                                                {idx < pub.authors.length - 1 && ', '}
+                                            </span>
+                                        ))}
+                                    </p>
+                                    <p className="text-base font-bold text-primary mb-3">
+                                        {pub.journal || pub.conference}, {pub.year}
+                                    </p>
+                                    {pub.description && (
+                                        <p className="text-sm text-neutral-500 dark:text-neutral-500 line-clamp-2">
+                                            {pub.description}
+                                        </p>
+                                    )}
+
+                                    <div className="flex flex-wrap gap-2 mt-auto">
+                                        {pub.doi && (
+                                            <a
+                                                href={pub.doi}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                            >
+                                            Paper
+                                            </a>
+                                        )}
+                                        {pub.url && (
+                                            <a
+                                                href={pub.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                            >
+                                                Website
+                                            </a>
+                                        )}
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
                 ))}
             </div>
         </motion.section>

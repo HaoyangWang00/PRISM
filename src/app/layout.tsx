@@ -83,8 +83,12 @@ export default function RootLayout({
                 const theme = localStorage.getItem('theme-storage');
                 const parsed = theme ? JSON.parse(theme) : null;
                 const setting = parsed?.state?.theme || 'system';
+                // Check Beijing night time (10 PM - 6 AM UTC+8)
+                const beijingHour = (new Date().getUTCHours() + 8) % 24;
+                const isNight = beijingHour >= 22 || beijingHour < 6;
                 const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const effective = setting === 'dark' ? 'dark' : (setting === 'light' ? 'light' : (prefersDark ? 'dark' : 'light'));
+                const fallbackDark = isNight || prefersDark;
+                const effective = setting === 'dark' ? 'dark' : (setting === 'light' ? 'light' : (fallbackDark ? 'dark' : 'light'));
                 var root = document.documentElement;
                 root.classList.add(effective);
                 root.setAttribute('data-theme', effective);

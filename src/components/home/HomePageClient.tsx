@@ -60,7 +60,6 @@ export default function HomePageClient({ dataByLocale, defaultLocale }: HomePage
           <Profile
             author={data.author}
             social={data.social}
-            features={data.features}
             researchInterests={data.researchInterests}
           />
         </div>

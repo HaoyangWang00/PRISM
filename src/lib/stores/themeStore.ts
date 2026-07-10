@@ -47,8 +47,23 @@ function getSystemPrefersDark(): boolean {
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
+// Check if current time is after 10 PM Beijing time (UTC+8)
+function isBeijingNightTime(): boolean {
+  try {
+    const now = new Date();
+    // Get current time in Beijing (UTC+8)
+    const beijingHour = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })).getHours();
+    // Dark mode from 22:00 (10 PM) to 06:00 (6 AM)
+    return beijingHour >= 22 || beijingHour < 6;
+  } catch {
+    return false;
+  }
+}
+
 export function resolveTheme(theme: Theme): 'light' | 'dark' {
   if (theme === 'system') {
+    // If it's Beijing night time, prefer dark; otherwise follow system preference
+    if (isBeijingNightTime()) return 'dark';
     return getSystemPrefersDark() ? 'dark' : 'light';
   }
   return theme;

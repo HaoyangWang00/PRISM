@@ -26,7 +26,7 @@ function loadDynamicPageData(slug: string, locale?: string): DynamicPageLocaleDa
     return {
       type: 'publication',
       config: pubConfig,
-      publications: parseBibTeX(bibtex, locale),
+      publications: parseBibTeX(bibtex),
     };
   }
 
