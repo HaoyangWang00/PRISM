@@ -25,7 +25,7 @@ export default function News({ items, title = 'News' }: NewsProps) {
                 {items.map((item, index) => (
                     <div key={index} className="flex items-start space-x-3">
                         {/* <span className="text-xs text-neutral-700 mt-1 w-16 flex-shrink-0">{item.date}</span> */}
-                        <span className="text-sm text-neutral-600 bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-300 px-2 py-0.5 rounded font-medium flex-shrink-0">{item.date}</span>
+                        <span className="text-sm text-neutral-700 bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-500 px-2 py-0.5 rounded font-medium flex-shrink-0">{item.date}</span>
                         <div  className="text-base text-neutral-700">
                             <ReactMarkdown>{item.content}</ReactMarkdown>
                         </div>
