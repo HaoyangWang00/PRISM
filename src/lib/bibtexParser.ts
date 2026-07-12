@@ -73,8 +73,9 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
       researchArea: detectResearchArea(tags.title, keywords),
       
       // Optional fields
-      journal: cleanBibTeXString(tags.journal),
+      journal: cleanBibTeXString(tags.journal || tags.school),
       conference: cleanBibTeXString(tags.booktitle),
+      school: cleanBibTeXString(tags.school),
       volume: tags.volume,
       issue: tags.number,
       pages: tags.pages,

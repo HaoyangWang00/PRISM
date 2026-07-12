@@ -24,6 +24,7 @@ export interface Publication {
   abstract?: string;
   journal?: string;
   conference?: string;
+  school?: string;
   volume?: string;
   issue?: string;
   pages?: string;
