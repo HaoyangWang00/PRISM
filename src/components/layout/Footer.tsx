@@ -21,7 +21,7 @@ export default function Footer({ lastUpdated, lastUpdatedByLocale, defaultLocale
 
   return (
     <footer className="bg-neutral-50/50 dark:bg-neutral-900/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex items-center gap-4 mb-2">
           <div className="flex-grow border-t border-neutral-300 dark:border-neutral-600" />
           <span className="text-sm font-semibold text-neutral-500 dark:text-neutral-400 whitespace-nowrap">
