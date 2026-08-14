@@ -19,7 +19,7 @@ Feel free to customize your own version of PRISM with coding agents.
 *   **📄 Configuration-Driven**: Manage your entire site's content using simple `TOML`, `Markdown`, and `BibTeX` files in the `content/` directory. No code changes required for content updates!
 *   **📚 BibTeX Support**: Directly render your publications from a `.bib` file. Includes search, filtering (Year, Type), and automatic citation generation.
 *   **🎨 Modern Design**: Clean, responsive UI with a beautiful serif/sans-serif typography pairing, smooth animations (Framer Motion), and Dark Mode support.
-*   **⚡️ High Performance**: Built on Next.js 20 with Turbopack. Static export ensures blazing fast load times and easy deployment.
+*   **⚡️ High Performance**: Built on Next.js 15 with Turbopack. Static export ensures blazing fast load times and easy deployment.
 *   **🔍 SEO Optimized**: Dynamic metadata generation for every page.
 *   **🧩 Dynamic Routing**: Easily add new pages by simply creating a config file.
 

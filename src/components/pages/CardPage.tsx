@@ -65,7 +65,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                                             {listItem.name.split('\n').map((line, lineIndex) => (
                                                 <span 
                                                     key={lineIndex} 
-                                                    className={`${embedded ? "text-sm" : "text-base"} text-neutral-700 dark:text-neutral-300 font-medium leading-snug`}
+                                                    className={`${embedded ? "text-sm" : "text-base"} text-neutral-700 dark:text-neutral-600 font-medium leading-snug`}
                                                 >
                                                     {line}
                                                 </span>

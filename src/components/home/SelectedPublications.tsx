@@ -94,7 +94,7 @@ export default function SelectedPublications({ publications, title = 'Selected P
                                                 href={pub.doi}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white transition-colors"
                                             >
                                             Paper
                                             </a>
@@ -104,9 +104,19 @@ export default function SelectedPublications({ publications, title = 'Selected P
                                                 href={pub.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white transition-colors"
                                             >
                                                 Website
+                                            </a>
+                                        )}
+                                        {pub.demo && (
+                                            <a
+                                                href={pub.demo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white transition-colors"
+                                            >
+                                                Demo
                                             </a>
                                         )}
                                     </div>

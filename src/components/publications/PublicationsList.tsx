@@ -122,7 +122,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                             <div className="p-4 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-800 flex flex-wrap gap-6">
                                 {/* Year Filter */}
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-600 flex items-center">
                                         <CalendarIcon className="h-4 w-4 mr-1" /> Year
                                     </label>
                                     <div className="flex flex-wrap gap-2">
@@ -132,7 +132,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 "px-3 py-1 text-xs rounded-full transition-colors",
                                                 selectedYear === 'all'
                                                     ? "bg-accent text-white"
-                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-200"
                                             )}
                                         >
                                             All
@@ -145,7 +145,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                     "px-3 py-1 text-xs rounded-full transition-colors",
                                                     selectedYear === year
                                                         ? "bg-accent text-white"
-                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-200"
                                                 )}
                                             >
                                                 {year}
@@ -156,7 +156,7 @@ export default function PublicationsList({ config, publications, embedded = fals
 
                                 {/* Type Filter */}
                                 <div className="space-y-2">
-                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-600 flex items-center">
                                         <BookOpenIcon className="h-4 w-4 mr-1" /> Type
                                     </label>
                                     <div className="flex flex-wrap gap-2">
@@ -166,7 +166,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                 "px-3 py-1 text-xs rounded-full transition-colors",
                                                 selectedType === 'all'
                                                     ? "bg-accent text-white"
-                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-200"
                                             )}
                                         >
                                             All
@@ -179,7 +179,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                     "px-3 py-1 text-xs rounded-full capitalize transition-colors",
                                                     selectedType === type
                                                         ? "bg-accent text-white"
-                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-200"
                                                 )}
                                             >
                                                 {type.replace('-', ' ')}
@@ -265,7 +265,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             href={pub.doi}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white transition-colors"
                                                         >
                                                             Paper
                                                         </a>
@@ -275,9 +275,19 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             href={pub.url}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white transition-colors"
                                                         >
                                                             Website
+                                                        </a>
+                                                    )}
+                                                    {pub.demo && (
+                                                        <a
+                                                            href={pub.demo}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white transition-colors"
+                                                        >
+                                                            Demo
                                                         </a>
                                                     )}
                                                     {pub.code && (
@@ -285,7 +295,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                             href={pub.code}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
-                                                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-colors"
+                                                            className="inline-flex items-center px-3 py-1 rounded-md text-xs font-medium bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white transition-colors"
                                                         >
                                                             Code
                                                         </a>
@@ -297,7 +307,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                                 "inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors",
                                                                 expandedAbstractId === pub.id
                                                                     ? "bg-accent text-white"
-                                                                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white"
+                                                                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white"
                                                             )}
                                                         >
                                                             <DocumentTextIcon className="h-3 w-3 mr-1.5" />
@@ -311,7 +321,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                                 "inline-flex items-center px-3 py-1 rounded-md text-xs font-medium transition-colors",
                                                                 expandedBibtexId === pub.id
                                                                     ? "bg-accent text-white"
-                                                                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white"
+                                                                    : "bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-600 hover:bg-accent hover:text-white"
                                                             )}
                                                         >
                                                             <BookOpenIcon className="h-3 w-3 mr-1.5" />
@@ -352,7 +362,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                                     onClick={() => {
                                                                         navigator.clipboard.writeText(pub.bibtex || '');
                                                                     }}
-                                                                    className="absolute top-2 right-2 p-1.5 rounded-md bg-white dark:bg-neutral-700 text-neutral-500 hover:text-accent shadow-sm border border-neutral-200 dark:border-neutral-600 transition-colors"
+                                                                    className="absolute top-2 right-2 p-1.5 rounded-md bg-white dark:bg-neutral-200 text-neutral-500 hover:text-accent shadow-sm border border-neutral-200 dark:border-neutral-300 transition-colors"
                                                                     title="Copy to clipboard"
                                                                 >
                                                                     <ClipboardDocumentIcon className="h-4 w-4" />

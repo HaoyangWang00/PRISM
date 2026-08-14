@@ -1,6 +1,10 @@
 # 部署方法：https://github.com/xyjoey/PRISM/blob/main/docs/deployment.md
 
 [[news]]
+date = "2026-08"
+content = "Our paper **EV-Pose** was accepted by **IEEE TMC**! This work introduces an event-camera-enhanced high-frequency visual positioning service for accurate drone landing."
+
+[[news]]
 date = "2026-06"
 content = "I received my **Ph.D. degree** from Tsinghua University and was honored as an **Outstanding Graduate** of Beijing and Tsinghua University." 
 
@@ -22,7 +26,7 @@ content = "**SniffySquad** was accepted by **ACM TOSN**. This work addresses gas
 
 [[news]]
 date = "2025-09"
-content = "**EventPro** was accepted by **ACM SenSys 2026**. Propeller now can served as the entry sensing point for drone!"
+content = "**EventPro** was accepted by **ACM SenSys 2026**. This work turns drone propellers into a new sensing modality!"
 
 [[news]]
 date = "2025-09"
@@ -30,11 +34,11 @@ content = "Extended version of **TransformLoc - Aerial Shepherds** was accepted 
 
 [[news]]
 date = "2025-06"
-content = "Finish the wonderful visiting at the UC Berkeley!"
+content = "I completed a wonderful research visit at UC Berkeley!"
 
 [[news]]
 date = "2025-05"
-content = "**DDL** won **Sliver Prize** at 50th International Exhibition of Inventions Geneva!"
+content = "**DDL** won the **Silver Prize** at the 50th International Exhibition of Inventions Geneva!"
 
 [[news]]
 date = "2025-04"
@@ -50,7 +54,7 @@ content = "**mmE-Loc** was conditionally accepted by **ACM SenSys 2025**!"
 
 [[news]]
 date = "2025-01"
-content = "I start working as a Visiting Scholar at the UC Berkeley!"
+content = "I started working as a Visiting Scholar at UC Berkeley!"
 
 [[news]]
 date = "2024-11"
@@ -82,11 +86,11 @@ content = "Three posters were accepted by HotMobile 2024 and IEEE INFOCOM 2024!"
 
 [[news]]
 date = "2024-02"
-content = "I will serve as a T.A. of the course Urban low altitude messenger host by Tsinghua SIGS and Meituan Inc.!"
+content = "I will serve as a T.A. for the course Urban Low-Altitude Messenger, hosted by Tsinghua SIGS and Meituan Inc.!"
 
 [[news]]
 date = "2023-12"
-content = "We won the 1st in 1st Low-Altitude Economy Flight Management Challenge Creative Competition hold by Meituan Inc.!"
+content = "We won first place in the inaugural Low-Altitude Economy Flight Management Challenge Creative Competition held by Meituan Inc.!"
 
 [[news]]
 date = "2023-12"
@@ -94,7 +98,7 @@ content = "**TransformLoc** was accepted by **IEEE INFOCOM 2024**! (Acceptance r
 
 [[news]]
 date = "2023-10"
-content = "**CaliFormer** was selected as the **Best Persentation Award** of ACM Ubicomp 2023 CPD!"
+content = "**CaliFormer** received the **Best Presentation Award** at the ACM UbiComp 2023 CPD Workshop!"
 
 [[news]]
 date = "2023-09"
@@ -130,7 +134,7 @@ content = "I graduated from Central South University with honor!"
 
 # [[news]]
 # date = "2025-09"
-# content = "EventPro is accepted by ACM SenSys 2026. Propeller now can served as the entry sensing point for drone!"
+# content = "EventPro was accepted by ACM SenSys 2026. This work turns drone propellers into a new sensing modality!"
 
 # [[news]]
 # date = "2025-09"
@@ -138,11 +142,11 @@ content = "I graduated from Central South University with honor!"
 
 # [[news]]
 # date = "2025-06"
-# content = "Finish the wonderful visiting at the UC Berkeley!"
+# content = "I completed a wonderful research visit at UC Berkeley!"
 
 # [[news]]
 # date = "2025-05"
-# content = "DDL has won Sliver Prize at 50th International Exhibition of Inventions Geneva!"
+# content = "DDL won the Silver Prize at the 50th International Exhibition of Inventions Geneva!"
 
 # [[news]]
 # date = "2025-04"
@@ -158,7 +162,7 @@ content = "I graduated from Central South University with honor!"
 
 # [[news]]
 # date = "2025-01"
-# content = "I start working as a Visiting Scholar at the UC Berkeley!"
+# content = "I started working as a Visiting Scholar at UC Berkeley!"
 
 # [[news]]
 # date = "2024-11"
@@ -190,11 +194,11 @@ content = "I graduated from Central South University with honor!"
 
 # [[news]]
 # date = "2024-02"
-# content = "I serve as a T.A. of the course Urban low altitude messenger host by Tsinghua SIGS and Meituan Inc.!"
+# content = "I served as a T.A. for the course Urban Low-Altitude Messenger, hosted by Tsinghua SIGS and Meituan Inc.!"
 
 # [[news]]
 # date = "2023-12"
-# content = "We win the 1st in 1st Low-Altitude Economy Flight Management Challenge Creative Competition hold by Meituan Inc.!"
+# content = "We won first place in the inaugural Low-Altitude Economy Flight Management Challenge Creative Competition held by Meituan Inc.!"
 
 # [[news]]
 # date = "2023-12"
@@ -202,7 +206,7 @@ content = "I graduated from Central South University with honor!"
 
 # [[news]]
 # date = "2023-10"
-# content = "CaliFormer is selected as the Best Persentation Award of ACM Ubicomp 2023 CPD!"
+# content = "CaliFormer received the Best Presentation Award at the ACM UbiComp 2023 CPD Workshop!"
 
 # [[news]]
 # date = "2023-09"
