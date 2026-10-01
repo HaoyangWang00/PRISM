@@ -9,7 +9,8 @@ import {
     CalendarIcon,
     BookOpenIcon,
     ClipboardDocumentIcon,
-    DocumentTextIcon
+    DocumentTextIcon,
+    UserIcon
 } from '@heroicons/react/24/outline';
 import { Publication } from '@/types/publication';
 import { PublicationPageConfig } from '@/types/page';
@@ -25,6 +26,7 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
+    const [firstAuthorOnly, setFirstAuthorOnly] = useState(false);
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
@@ -51,10 +53,14 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             const matchesYear = selectedYear === 'all' || pub.year === selectedYear;
             const matchesType = selectedType === 'all' || pub.type === selectedType;
+            const highlightedAuthor = pub.authors.find(author => author.isHighlighted);
+            const matchesAuthorship = !firstAuthorOnly ||
+                pub.authors[0]?.isHighlighted === true ||
+                highlightedAuthor?.isCoAuthor === true;
 
-            return matchesSearch && matchesYear && matchesType;
+            return matchesSearch && matchesYear && matchesType && matchesAuthorship;
         });
-    }, [publications, searchQuery, selectedYear, selectedType]);
+    }, [publications, searchQuery, selectedYear, selectedType, firstAuthorOnly]);
 
     // Group filtered publications by year
     const groupedPublications = useMemo(() => {
@@ -98,6 +104,21 @@ export default function PublicationsList({ config, publications, embedded = fals
                         />
                     </div>
                     <button
+                        type="button"
+                        aria-pressed={firstAuthorOnly}
+                        onClick={() => setFirstAuthorOnly(current => !current)}
+                        className={cn(
+                            "flex items-center justify-center whitespace-nowrap px-4 py-2 rounded-lg border transition-all duration-200",
+                            firstAuthorOnly
+                                ? "bg-accent text-white border-accent"
+                                : "bg-white dark:bg-neutral-900 border-neutral-200 dark:border-neutral-800 text-neutral-600 hover:border-accent hover:text-accent"
+                        )}
+                    >
+                        <UserIcon className="h-5 w-5 mr-2" />
+                        First / Co-first Author
+                    </button>
+                    <button
+                        type="button"
                         onClick={() => setShowFilters(!showFilters)}
                         className={cn(
                             "flex items-center justify-center px-4 py-2 rounded-lg border transition-all duration-200",
