@@ -7,10 +7,6 @@ description = "Professional services and community involvement."
 [[items]]
 title = "Technical Program Committee"
     [[items.list]]
-    name = "The Annual AAAI Conference on Artificial Intelligence (AAAI)"
-    date = "2025, 2026"
-
-    [[items.list]]
     name = "ACM IASA Workshop"
     date = "2024"
 
@@ -36,6 +32,14 @@ title = "Selected Journal Reviewer"
 
 [[items]]
 title = "Conference Reviewer"
+    [[items.list]]
+    name = "International Conference on Learning Representations (ICLR)"
+    date = "2027"
+
+    [[items.list]]
+    name = "The Annual AAAI Conference on Artificial Intelligence (AAAI)"
+    date = "2025, 2026"
+
     [[items.list]]
     name = "IEEE International Conference on Robotics and Automation (IEEE ICRA)"
     date = "2025"

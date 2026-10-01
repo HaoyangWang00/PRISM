@@ -19,6 +19,7 @@ interface NavigationProps {
 
 export default function Navigation({ items, siteTitle, chineseName, enableOnePageMode }: NavigationProps) {
   const pathname = usePathname();
+  const isAboutPage = pathname === '/' || pathname === '/about' || pathname === '/about/';
   const [scrolled, setScrolled] = useState(false);
   const [activeHash, setActiveHash] = useState('');
 
@@ -98,7 +99,7 @@ export default function Navigation({ items, siteTitle, chineseName, enableOnePag
               <div className="flex justify-between items-center h-16 lg:h-20">
                 {/* Logo/Name */}
                 <div className="flex shrink-0 flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:gap-8">
-                  <motion.div
+                  {!isAboutPage && <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="flex-shrink-0"
@@ -112,7 +113,7 @@ export default function Navigation({ items, siteTitle, chineseName, enableOnePag
                         <span lang="zh-CN"><span aria-hidden="true" className="font-normal text-neutral-400">｜</span>{chineseName}</span>
                       )}
                     </Link>
-                  </motion.div>
+                  </motion.div>}
                   <span
                     role="img"
                     aria-label="清华大学 Tsinghua University"
