@@ -1,5 +1,5 @@
 export interface BasePageConfig {
-    type: 'about' | 'publication' | 'card' | 'text';
+    type: 'about' | 'publication' | 'card' | 'text' | 'news';
     title: string;
     description?: string;
 }
@@ -7,6 +7,11 @@ export interface BasePageConfig {
 export interface PublicationPageConfig extends BasePageConfig {
     type: 'publication';
     source: string;
+}
+
+export interface NewsPageConfig extends BasePageConfig {
+    type: 'news';
+    news: { date: string; content: string }[];
 }
 
 export interface TextPageConfig extends BasePageConfig {
@@ -32,5 +37,6 @@ export interface CardItem {
 
 export interface CardPageConfig extends BasePageConfig {
     type: 'card';
+    layout?: 'grouped' | 'timeline';
     items: CardItem[];
 }

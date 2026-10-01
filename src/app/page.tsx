@@ -37,7 +37,6 @@ export default function Home() {
 
   // Always load about page config for profile info
   const aboutConfig = getPageConfig('about');
-  const researchInterests = (aboutConfig as { profile?: { research_interests?: string[] } })?.profile?.research_interests;
 
   // Helper function to process sections (for about page)
   const processSections = (sections: SectionConfig[]) => {
@@ -129,53 +128,45 @@ export default function Home() {
 
   return (
     <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8 bg-background min-h-screen">
-      {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
-        {/* Left Column - Profile */}
-        <div className="lg:col-span-1">
-          <Profile
-            author={config.author}
-            social={config.social}
-            researchInterests={researchInterests}
-          />
-        </div>
-
-        {/* Right Column - Content */}
-        <div className="lg:col-span-2 space-y-8">
+      <div className="space-y-12">
           {pagesToShow.map((page) => (
-            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-8">
-              {page.type === 'about' && page.sections.map((section: SectionConfig) => {
-                switch (section.type) {
-                  case 'markdown':
-                    return (
-                      <About
-                        key={section.id}
-                        content={section.content || ''}
-                        title={section.title}
+            <section key={page.id} id={page.id} className="scroll-mt-24 space-y-12">
+              {page.type === 'about' && (
+                <>
+                  <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
+                    <div className="min-w-0">
+                      <Profile
+                        author={config.author}
+                        social={config.social}
                       />
-                    );
-                  case 'publications':
-                    return (
+                    </div>
+                    <div className="flex min-w-0 flex-col gap-6 lg:col-span-2">
+                      {page.sections.filter(section => section.type !== 'publications').map(section => (
+                        section.type === 'markdown' ? (
+                          <div key={section.id} className="shrink-0">
+                            <About content={section.content || ''} title={section.title} />
+                          </div>
+                        ) : (
+                          <News
+                            key={section.id}
+                            items={section.items || []}
+                            title={section.title}
+                          />
+                        )
+                      ))}
+                    </div>
+                  </div>
+                  {page.sections.filter(section => section.type === 'publications').map(section => (
+                    <div key={section.id} id={section.id} className="mx-auto w-full max-w-[1100px] scroll-mt-24">
                       <SelectedPublications
-                        key={section.id}
                         publications={section.publications || []}
                         title={section.title}
-                        enableOnePageMode={true}
+                        enableOnePageMode={enableOnePageMode}
                       />
-                    );
-                  case 'list':
-                    return (
-                      <News
-                        key={section.id}
-                        items={section.items || []}
-                        title={section.title}
-                      />
-                    );
-                  default:
-                    return null;
-                }
-              })}
+                    </div>
+                  ))}
+                </>
+              )}
               {page.type === 'publication' && (
                 <PublicationsList
                   config={page.config}
@@ -198,7 +189,6 @@ export default function Home() {
               )}
             </section>
           ))}
-        </div>
       </div>
     </div>
   );

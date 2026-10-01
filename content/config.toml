@@ -2,10 +2,11 @@
 title = "Haoyang Wang"
 description = "Postdoctoral Researcher at Tsinghua University."
 favicon = "/THUlogo.png"
-last_updated = "August 14, 2026"
+last_updated = "October 1, 2026"
 
 [author]
 name = "Haoyang Wang"
+chinese_name = "王灏洋"
 title = "Postdoctoral Researcher"
 institution = "Tsinghua University"
 avatar = "/haoyang250613.jpg"
@@ -13,7 +14,7 @@ avatar = "/haoyang250613.jpg"
 [social]
 # Contact information (leave blank or delete to hide)
 
-email = "haoyang-22@mails.tsinghua.edu.cn"
+email = "haoyang-wang@mail.tsinghua.edu.cn"
 # location = "Shenzhen, China"
 # location_url = "https://maps.google.com"
 # location_details = [
@@ -49,6 +50,12 @@ title = "About"
 type = "page"
 target = "about"
 href = "/"
+
+[[navigation]]
+title = "News"
+type = "page"
+target = "news"
+href = "/news"
 
 [[navigation]]
 title = "Publications"

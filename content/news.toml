@@ -1,5 +1,17 @@
 # 部署方法：https://github.com/xyjoey/PRISM/blob/main/docs/deployment.md
 
+type = "news"
+title = "News"
+description = "Research updates, publications, and milestones."
+
+[[news]]
+date = "2026-09"
+content = "Our papers [**EventPrune**](https://arxiv.org/abs/2605.19506) and [**WorldVLN**](https://arxiv.org/abs/2605.15964) were accepted by **NeurIPS 2026**! These works explore event-guided token pruning and world-model-based drone navigation."
+
+[[news]]
+date = "2026-08"
+content = "Our paper **ELF-Net** was accepted by **ACM SenSys 2027**! This work fuses events and sparse LiDAR for robust depth estimation under low light and fast motion."
+
 [[news]]
 date = "2026-08"
 content = "Our paper **EV-Pose** was accepted by **IEEE TMC**! This work introduces an event-camera-enhanced high-frequency visual positioning service for accurate drone landing."

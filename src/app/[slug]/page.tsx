@@ -8,6 +8,7 @@ import {
   PublicationPageConfig,
   TextPageConfig,
   CardPageConfig,
+  NewsPageConfig,
 } from '@/types/page';
 
 import { Metadata } from 'next';
@@ -28,6 +29,10 @@ function loadDynamicPageData(slug: string, locale?: string): DynamicPageLocaleDa
       config: pubConfig,
       publications: parseBibTeX(bibtex),
     };
+  }
+
+  if (pageConfig.type === 'news') {
+    return { type: 'news', config: pageConfig as NewsPageConfig };
   }
 
   if (pageConfig.type === 'text') {

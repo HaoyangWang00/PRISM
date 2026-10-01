@@ -13,10 +13,11 @@ import { SiteConfig } from '@/lib/config';
 interface NavigationProps {
   items: SiteConfig['navigation'];
   siteTitle: string;
+  chineseName?: string;
   enableOnePageMode?: boolean;
 }
 
-export default function Navigation({ items, siteTitle, enableOnePageMode }: NavigationProps) {
+export default function Navigation({ items, siteTitle, chineseName, enableOnePageMode }: NavigationProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [activeHash, setActiveHash] = useState('');
@@ -96,23 +97,39 @@ export default function Navigation({ items, siteTitle, enableOnePageMode }: Navi
             <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center h-16 lg:h-20">
                 {/* Logo/Name */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex-shrink-0"
-                >
-                  <Link
-                    href="/"
-                    className="text-xl lg:text-2xl font-serif font-semibold text-primary hover:text-accent transition-colors duration-200"
+                <div className="flex shrink-0 flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:gap-8">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-shrink-0"
                   >
-                    {siteTitle}
-                  </Link>
-                </motion.div>
+                    <Link
+                      href="/"
+                      className="inline-flex items-center gap-1 whitespace-nowrap text-lg max-[360px]:text-base lg:text-[22px] font-name font-semibold text-primary hover:text-accent transition-colors duration-200"
+                    >
+                      {siteTitle}
+                      {chineseName && (
+                        <span lang="zh-CN"><span aria-hidden="true" className="font-normal text-neutral-400">｜</span>{chineseName}</span>
+                      )}
+                    </Link>
+                  </motion.div>
+                  <span
+                    role="img"
+                    aria-label="清华大学 Tsinghua University"
+                    className="block h-[28px] w-[87px] shrink-0 bg-[#660874] dark:bg-[#d8afe3] sm:h-12 sm:w-[149px]"
+                    style={{
+                      maskImage: 'url(/tsinghua-wordmark.png)',
+                      maskSize: 'contain',
+                      maskRepeat: 'no-repeat',
+                      maskPosition: 'center',
+                    }}
+                  />
+                </div>
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:block">
-                  <div className="ml-10 flex items-center space-x-8">
-                    <div className="flex items-baseline space-x-8">
+                  <div className="ml-6 flex items-center space-x-4 xl:space-x-8">
+                    <div className="flex items-baseline space-x-1 xl:space-x-8">
                       {items.map((item) => {
                         const isActive = enableOnePageMode
                           ? activeHash === `#${item.target}` || (!activeHash && item.target === 'about')

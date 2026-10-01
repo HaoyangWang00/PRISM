@@ -1,0 +1,112 @@
+{
+  "ding2027elfnet": {
+    "file": "elfnet.webp",
+    "source": "User-provided ELF-Net system diagram"
+  },
+  "ma2026eventprune": {
+    "file": "eventprune.webp",
+    "source": "https://arxiv.org/html/2605.19506v1/pipeline.png"
+  },
+  "zhao2026worldvln": {
+    "file": "worldvln.webp",
+    "source": "https://arxiv.org/html/2605.15964v1/figure/model.png"
+  },
+  "wang2026phd": {
+    "file": "phd-thesis.webp",
+    "source": "User-provided doctoral thesis overview"
+  },
+  "zhao2025flight": {
+    "file": "flight.webp",
+    "source": "https://arxiv.org/html/2509.21085v1/figure/roadmap3.jpg"
+  },
+  "guo2026x2fusion": {
+    "file": "x2fusion.webp",
+    "source": "https://arxiv.org/html/2603.16671v1/figs/2-2.png"
+  },
+  "wang2026evpose": {
+    "file": "evpose.webp",
+    "source": "https://ev-pose.github.io/static/images/overview.png"
+  },
+  "wang2025mme": {
+    "file": "mmeloc.webp",
+    "source": "https://mme-loc.github.io/static/images/overview.png"
+  },
+  "wang2025event": {
+    "file": "event-survey.webp",
+    "source": "old-website-251128/images/eventsurvey.png"
+  },
+  "chen2025count": {
+    "file": "eventpro.webp",
+    "source": "https://eventpro25.github.io/EventPro/static/images/overview.png"
+  },
+  "wang2025ultra": {
+    "file": "mmeloc-sensys.webp",
+    "source": "old-website-251128/images/mmeloc_SenSys.png"
+  },
+  "wang2025aerial": {
+    "file": "aerial-shepherds.webp",
+    "source": "https://arxiv.org/html/2506.08408v1/Figs/intro.png"
+  },
+  "wang2024transformloc": {
+    "file": "transformloc.webp",
+    "source": "old-website-251128/images/TransformLoc_INFOCOM.png"
+  },
+  "liu2024mobiair": {
+    "file": "mobiair.webp",
+    "source": "old-website-251128/images/MobiAir_MobiSys.png"
+  },
+  "chen2024ddl": {
+    "file": "ddl.webp",
+    "source": "old-website-251128/images/DDL_JSTSP.png"
+  },
+  "cheng2024sniffysquad": {
+    "file": "sniffysquad.webp",
+    "source": "https://arxiv.org/html/2411.06121v2/figs/fig2-20240314-220ppi.png"
+  },
+  "zhao2024foes": {
+    "file": "airtouch.webp",
+    "source": "old-website-251128/images/airtouch_mobicom.png"
+  },
+  "wang2023califormer": {
+    "file": "califormer.webp",
+    "source": "old-website-251128/images/CaliFormer_2023.png"
+  },
+  "wang2022h": {
+    "file": "h-swarmloc.webp",
+    "source": "old-website-251128/images/H-swarmLoc_2022.png"
+  },
+  "zhou2025catua": {
+    "file": "catua.webp",
+    "source": "https://dang.fan/publication/tmc25-catua/tmc25-catua.pdf",
+    "page": 4,
+    "figure": "Figure 4"
+  },
+  "chen2024soscheduler": {
+    "file": "soscheduler.webp",
+    "source": "https://dang.fan/publication/iotj-soscheduler/iotj-soscheduler.pdf",
+    "page": 2,
+    "figure": "Figure 1"
+  },
+  "zhao2023smoothlander": {
+    "file": "smoothlander.webp",
+    "source": "old-website-251128/data/smoothlander_CPD.pdf",
+    "page": 3,
+    "figure": "Figure 2"
+  },
+  "chen2022deliversense": {
+    "file": "deliversense.webp",
+    "source": "old-website-251128/data/deliversense_CPD.pdf",
+    "page": 4,
+    "figure": "Figure 2"
+  },
+  "guo2021lightweight": {
+    "file": "lightweight.webp",
+    "source": "old-website-251128/data/lightweight_JSA.pdf",
+    "page": 4,
+    "figure": "Figure 1"
+  },
+  "luo2024eventtracker": {
+    "file": "eventtracker.webp",
+    "source": "User-provided EventTracker overview diagram"
+  }
+}

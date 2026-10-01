@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
+import PublicationPreview from '@/components/publications/PublicationPreview';
 import {
     MagnifyingGlassIcon,
     FunnelIcon,
@@ -215,21 +215,9 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         transition={{ duration: 0.4, delay: 0.05 * index }}
                                         className="bg-white dark:bg-neutral-900 p-6 rounded-xl shadow-sm border border-neutral-200 dark:border-neutral-800 hover:shadow-md transition-all duration-200"
                                     >
-                                        <div className="flex flex-col md:flex-row gap-6">
-                                            {pub.preview && (
-                                                <div className="w-full md:w-48 flex-shrink-0">
-                                                    <div className="aspect-video md:aspect-[4/3] relative rounded-lg overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                                                        <Image
-                                                            src={`/papers/${pub.preview}`}
-                                                            alt={pub.title}
-                                                            fill
-                                                            className="object-cover"
-                                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            )}
-                                            <div className="flex-grow">
+                                        <div className="flex flex-col sm:flex-row gap-6">
+                                            <PublicationPreview preview={pub.preview} title={pub.title} />
+                                            <div className="min-w-0 flex-1">
                                                 <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary mb-2 leading-tight`}>
                                                     {pub.title}
                                                 </h3>
@@ -253,9 +241,9 @@ export default function PublicationsList({ config, publications, embedded = fals
                                                     {pub.journal || pub.conference}, {pub.year}
                                                 </p>
 
-                                                {pub.description && (
-                                                    <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-4 line-clamp-3">
-                                                        {pub.description}
+                                                {(pub.summary || pub.description) && (
+                                                    <p className="text-[15px] leading-6 text-neutral-700 mb-4">
+                                                        {pub.summary || pub.description}
                                                     </p>
                                                 )}
 

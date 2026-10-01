@@ -1,12 +1,6 @@
 type = "about"
 title = "About"
 
-[profile]
-research_interests = [
-  "Embodied & embedded AI",
-  "Bio-inspired & neuromorphic computing",
-]
-
 [[sections]]
 id = "about"
 type = "markdown"
@@ -24,7 +18,7 @@ id = "featured_publications"
 type = "publications"
 title = "Selected Publications"
 filter = "selected"
-limit = 10
+limit = 6
 
 
 

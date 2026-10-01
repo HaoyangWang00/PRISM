@@ -186,6 +186,10 @@ body {
 }
 
 /* Typography utilities */
+.font-name {
+  font-family: "Microsoft YaHei", "Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+}
+
 .text-balance {
   text-wrap: balance;
 }

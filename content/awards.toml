@@ -1,5 +1,6 @@
 type = "card"
-title = "Selected awards"
+layout = "timeline"
+title = "Selected Awards"
 description = "Honors and awards I have received."
 
 [[items]]

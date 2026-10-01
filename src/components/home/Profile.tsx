@@ -27,10 +27,9 @@ const OrcidIcon = ({ className }: { className?: string }) => (
 interface ProfileProps {
     author: SiteConfig['author'];
     social: SiteConfig['social'];
-    researchInterests?: string[];
 }
 
-export default function Profile({ author, social, researchInterests }: ProfileProps) {
+export default function Profile({ author, social }: ProfileProps) {
 
     const [showAddress, setShowAddress] = useState(false);
     const [isAddressPinned, setIsAddressPinned] = useState(false);
@@ -75,13 +74,13 @@ export default function Profile({ author, social, researchInterests }: ProfilePr
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 70 }}
-            animate={{ opacity: 1, y: 50 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="sticky top-20 lg:top-24"
+            className="flex h-full flex-col"
         >
             {/* Profile Image */}
-            <div className="w-64 h-64 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
+            <div className="w-64 h-64 mx-auto mb-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
                 <Image
                     src={author.avatar}
                     alt={author.name}
@@ -93,9 +92,15 @@ export default function Profile({ author, social, researchInterests }: ProfilePr
             </div>
 
             {/* Name and Title */}
-            <div className="text-center mb-4">
-                <h1 className="text-3xl font-serif font-bold text-primary mb-2">
-                    {author.name}
+            <div className="text-center mb-3">
+                <h1 className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1 text-[22px] sm:text-[28px] font-name font-semibold text-primary mb-1">
+                    <span className="whitespace-nowrap">{author.name}</span>
+                    {author.chinese_name && (
+                        <span className="inline-flex items-center gap-1 whitespace-nowrap" lang="zh-CN">
+                            <span aria-hidden="true" className="font-normal text-neutral-400">｜</span>
+                            {author.chinese_name}
+                        </span>
+                    )}
                 </h1>
                 <p className="text-lg text-accent font-medium mb-1">
                     {author.title}
@@ -106,7 +111,7 @@ export default function Profile({ author, social, researchInterests }: ProfilePr
             </div>
 
             {/* Contact Links */}
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-6 relative px-2">
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4 relative px-2">
                 {socialLinks.map((link) => {
                     const IconComponent = link.icon;
                     if (link.isLocation) {
@@ -272,20 +277,8 @@ export default function Profile({ author, social, researchInterests }: ProfilePr
                 })}
             </div>
 
-            {/* Research Interests */}
-            {researchInterests && researchInterests.length > 0 && (
-                <div className="bg-neutral-100 dark:bg-neutral-800 rounded-lg p-4 mb-6 hover:shadow-lg transition-all duration-200 hover:scale-[1.02]">
-                    <h3 className="font-semibold text-primary mb-3">Research Interests</h3>
-                    <div className="space-y-2 text-sm text-neutral-700 dark:text-neutral-500">
-                        {researchInterests.map((interest, index) => (
-                            <div key={index}>{interest}</div>
-                        ))}
-                    </div>
-                </div>
-            )}
 
-
-            <footer className="mt-auto hidden lg:flex flex-col items-center justify-center w-full">
+            <footer className="hidden lg:flex flex-col items-center justify-center w-full">
             {/* University Logos */}
             {/* <div className="flex justify-center items-center gap-4 mb-6">
                 <div className="relative w-21 h-21 transition-all duration-300 hover:scale-110 opacity-80 hover:opacity-100">

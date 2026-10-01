@@ -1,7 +1,59 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CardPageConfig } from '@/types/page';
+import { CardItem, CardPageConfig } from '@/types/page';
+
+function ServiceSections({ items }: { items: CardItem[] }) {
+    return (
+        <div className="space-y-7">
+            {items.map((item) => (
+                <section key={item.title} className="border-t border-neutral-200 pt-5">
+                    <h2 className="mb-2 text-lg font-semibold text-accent">{item.title}</h2>
+                    <ul className="divide-y divide-neutral-100">
+                        {item.list?.map((entry) => (
+                            <li key={`${entry.name}-${entry.date}`} className="grid gap-1 py-3 sm:grid-cols-[10rem_minmax(0,1fr)] sm:gap-6">
+                                <span className="text-sm leading-6 tabular-nums text-neutral-500">
+                                    {entry.date?.split(', ').map((date, index, dates) => (
+                                        <span key={date} className="inline-block whitespace-nowrap">
+                                            {date}{index < dates.length - 1 ? ',\u00a0' : ''}
+                                        </span>
+                                    ))}
+                                </span>
+                                <span className="min-w-0 whitespace-pre-line text-base leading-6 text-neutral-700">{entry.name}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            ))}
+        </div>
+    );
+}
+
+function AwardsTimeline({ items }: { items: CardItem[] }) {
+    const groups = new Map<string, CardItem[]>();
+    items.forEach((item) => {
+        const year = item.date || 'Other';
+        groups.set(year, [...(groups.get(year) || []), item]);
+    });
+
+    return (
+        <div className="space-y-6">
+            {[...groups.entries()].sort(([a], [b]) => b.localeCompare(a, undefined, { numeric: true })).map(([year, awards]) => (
+                <section key={year} className="grid gap-3 border-t border-neutral-200 pt-5 sm:grid-cols-[5rem_minmax(0,1fr)] sm:gap-6">
+                    <h2 className="text-xl font-serif font-bold text-accent">{year}</h2>
+                    <ul className="min-w-0 divide-y divide-neutral-100">
+                        {awards.map((award) => (
+                            <li key={award.title} className="py-4 first:pt-0 last:pb-0">
+                                <h3 className="text-base font-semibold leading-6 text-primary">{award.title}</h3>
+                                {award.subtitle && <p className="mt-1 text-sm leading-6 text-neutral-500">{award.subtitle}</p>}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            ))}
+        </div>
+    );
+}
 
 export default function CardPage({ config, embedded = false }: { config: CardPageConfig; embedded?: boolean }) {
     return (
@@ -19,6 +71,11 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                 )}
             </div>
 
+            {config.layout === 'grouped' ? (
+                <ServiceSections items={config.items} />
+            ) : config.layout === 'timeline' ? (
+                <AwardsTimeline items={config.items} />
+            ) : (
             <div className={`grid ${embedded ? "gap-4" : "gap-6"}`}>
                 {config.items.map((item, index) => (
                     <motion.div
@@ -87,6 +144,7 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
                     </motion.div>
                 ))}
             </div>
+            )}
         </motion.div>
     );
 }

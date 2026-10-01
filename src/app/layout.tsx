@@ -79,6 +79,7 @@ export default function RootLayout({
           <Navigation
             items={config.navigation}
             siteTitle={config.site.title}
+            chineseName={config.author.chinese_name}
             enableOnePageMode={config.features.enable_one_page_mode}
           />
           <main className="min-h-screen flex-grow pt-16 lg:pt-20">

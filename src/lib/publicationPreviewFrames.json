@@ -1,0 +1,202 @@
+{
+  "aerial-shepherds.webp": {
+    "width": 1400,
+    "height": 753,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 1400,
+    "contentHeight": 753
+  },
+  "airtouch.webp": {
+    "width": 412,
+    "height": 253,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 412,
+    "contentHeight": 253
+  },
+  "califormer.webp": {
+    "width": 1024,
+    "height": 542,
+    "left": 4,
+    "top": 65,
+    "contentWidth": 1015,
+    "contentHeight": 441
+  },
+  "catua.webp": {
+    "width": 1398,
+    "height": 564,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 1393,
+    "contentHeight": 563
+  },
+  "ddl.webp": {
+    "width": 540,
+    "height": 346,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 540,
+    "contentHeight": 346
+  },
+  "deliversense.webp": {
+    "width": 741,
+    "height": 321,
+    "left": 1,
+    "top": 3,
+    "contentWidth": 737,
+    "contentHeight": 317
+  },
+  "elfnet.webp": {
+    "width": 1400,
+    "height": 730,
+    "left": 3,
+    "top": 3,
+    "contentWidth": 1388,
+    "contentHeight": 727
+  },
+  "event-survey.webp": {
+    "width": 1400,
+    "height": 976,
+    "left": 3,
+    "top": 3,
+    "contentWidth": 1394,
+    "contentHeight": 965
+  },
+  "eventpro.webp": {
+    "width": 1400,
+    "height": 646,
+    "left": 9,
+    "top": 2,
+    "contentWidth": 1389,
+    "contentHeight": 641
+  },
+  "eventprune.webp": {
+    "width": 1400,
+    "height": 621,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 1400,
+    "contentHeight": 621
+  },
+  "eventtracker.webp": {
+    "width": 1400,
+    "height": 632,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 1400,
+    "contentHeight": 632
+  },
+  "evpose.webp": {
+    "width": 1400,
+    "height": 508,
+    "left": 9,
+    "top": 0,
+    "contentWidth": 1391,
+    "contentHeight": 508
+  },
+  "flight.webp": {
+    "width": 1400,
+    "height": 765,
+    "left": 21,
+    "top": 48,
+    "contentWidth": 1345,
+    "contentHeight": 698
+  },
+  "h-swarmloc.webp": {
+    "width": 738,
+    "height": 412,
+    "left": 7,
+    "top": 8,
+    "contentWidth": 730,
+    "contentHeight": 404
+  },
+  "lightweight.webp": {
+    "width": 717,
+    "height": 510,
+    "left": 0,
+    "top": 3,
+    "contentWidth": 716,
+    "contentHeight": 507
+  },
+  "mmeloc-sensys.webp": {
+    "width": 722,
+    "height": 558,
+    "left": 5,
+    "top": 0,
+    "contentWidth": 695,
+    "contentHeight": 558
+  },
+  "mmeloc.webp": {
+    "width": 1400,
+    "height": 489,
+    "left": 0,
+    "top": 1,
+    "contentWidth": 1400,
+    "contentHeight": 488
+  },
+  "mobiair.webp": {
+    "width": 1400,
+    "height": 733,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 1400,
+    "contentHeight": 733
+  },
+  "phd-thesis.webp": {
+    "width": 733,
+    "height": 325,
+    "left": 2,
+    "top": 3,
+    "contentWidth": 731,
+    "contentHeight": 321
+  },
+  "smoothlander.webp": {
+    "width": 639,
+    "height": 633,
+    "left": 0,
+    "top": 2,
+    "contentWidth": 639,
+    "contentHeight": 631
+  },
+  "sniffysquad.webp": {
+    "width": 1400,
+    "height": 709,
+    "left": 5,
+    "top": 0,
+    "contentWidth": 1395,
+    "contentHeight": 709
+  },
+  "soscheduler.webp": {
+    "width": 756,
+    "height": 489,
+    "left": 10,
+    "top": 3,
+    "contentWidth": 734,
+    "contentHeight": 471
+  },
+  "transformloc.webp": {
+    "width": 1400,
+    "height": 717,
+    "left": 0,
+    "top": 17,
+    "contentWidth": 1400,
+    "contentHeight": 696
+  },
+  "worldvln.webp": {
+    "width": 1400,
+    "height": 643,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 1400,
+    "contentHeight": 643
+  },
+  "x2fusion.webp": {
+    "width": 1400,
+    "height": 391,
+    "left": 0,
+    "top": 0,
+    "contentWidth": 1400,
+    "contentHeight": 391
+  }
+}
