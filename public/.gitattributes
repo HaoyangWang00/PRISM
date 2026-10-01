@@ -1,0 +1,2 @@
+# Static exports must retain exact bytes. React Flight text records include byte lengths.
+* -text
