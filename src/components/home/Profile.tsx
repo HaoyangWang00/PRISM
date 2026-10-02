@@ -86,7 +86,7 @@ export default function Profile({ author, social }: ProfileProps) {
                     alt={author.name}
                     width={256}
                     height={256}
-                    className="w-full h-full object-cover object-[32%_center]"
+                    className="w-full h-full object-cover object-center"
                     priority
                 />
             </div>

@@ -98,11 +98,28 @@ export default function Navigation({ items, siteTitle, chineseName, enableOnePag
             <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex justify-between items-center h-16 lg:h-20">
                 {/* Logo/Name */}
-                <div className="flex shrink-0 flex-col items-start gap-0.5 sm:flex-row sm:items-center sm:gap-8">
+                <div className="flex shrink-0 items-center gap-5 sm:gap-8">
+                  <Link
+                    href="/"
+                    aria-label="Tsinghua University — About"
+                    className="block shrink-0"
+                  >
+                    <span
+                      role="img"
+                      aria-label="清华大学 Tsinghua University"
+                      className="block h-[28px] w-[87px] bg-[#660874] dark:bg-[#d8afe3] sm:h-12 sm:w-[149px]"
+                      style={{
+                        maskImage: 'url(/tsinghua-wordmark.png)',
+                        maskSize: 'contain',
+                        maskRepeat: 'no-repeat',
+                        maskPosition: 'center',
+                      }}
+                    />
+                  </Link>
                   {!isAboutPage && <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-shrink-0"
+                    className="hidden flex-shrink-0 sm:block"
                   >
                     <Link
                       href="/"
@@ -114,17 +131,6 @@ export default function Navigation({ items, siteTitle, chineseName, enableOnePag
                       )}
                     </Link>
                   </motion.div>}
-                  <span
-                    role="img"
-                    aria-label="清华大学 Tsinghua University"
-                    className="block h-[28px] w-[87px] shrink-0 bg-[#660874] dark:bg-[#d8afe3] sm:h-12 sm:w-[149px]"
-                    style={{
-                      maskImage: 'url(/tsinghua-wordmark.png)',
-                      maskSize: 'contain',
-                      maskRepeat: 'no-repeat',
-                      maskPosition: 'center',
-                    }}
-                  />
                 </div>
 
                 {/* Desktop Navigation */}
