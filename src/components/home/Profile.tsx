@@ -80,13 +80,13 @@ export default function Profile({ author, social }: ProfileProps) {
             className="flex h-full flex-col"
         >
             {/* Profile Image */}
-            <div className="w-64 h-64 mx-auto mb-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
+            <div className="w-64 mx-auto mb-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105">
                 <Image
                     src={author.avatar}
                     alt={author.name}
-                    width={256}
-                    height={256}
-                    className="w-full h-full object-cover object-center"
+                    width={1122}
+                    height={1402}
+                    className="block w-full h-auto"
                     priority
                 />
             </div>
