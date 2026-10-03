@@ -2,14 +2,14 @@
 title = "Haoyang Wang"
 description = "Postdoctoral Researcher at Tsinghua University."
 favicon = "/THUlogo.png"
-last_updated = "October 2, 2026"
+last_updated = "October 3, 2026"
 
 [author]
 name = "Haoyang Wang"
 chinese_name = "王灏洋"
 title = "Postdoctoral Researcher"
 institution = "Tsinghua University"
-avatar = "/haoyang261002.png"
+avatar = "/haoyang261002.png?v=20261003"
 
 [social]
 # Contact information (leave blank or delete to hide)
